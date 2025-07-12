@@ -11,9 +11,26 @@ import {
     MobileNavMenu,
 } from "@/components/ui/resizable-navbar"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export function NavbarMain() {
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            })
+        }
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })
+    }
+
     const navItems = [
         {
             name: "About",
@@ -27,36 +44,62 @@ export function NavbarMain() {
             name: "FAQ",
             link: "#FAQ",
         },
+        {
+            name: "Organizers",
+            link: "#Organizers",
+        },
     ]
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+    useEffect(() => {
+        const handleNavClick = (e: Event) => {
+            const target = e.target as HTMLElement
+            const link = target.closest("a")
+
+            if (link && link.getAttribute("href")?.startsWith("#")) {
+                e.preventDefault()
+                const sectionId = link.getAttribute("href")?.substring(1)
+                if (sectionId) {
+                    scrollToSection(sectionId)
+                }
+            }
+        }
+
+        document.addEventListener("click", handleNavClick)
+
+        return () => {
+            document.removeEventListener("click", handleNavClick)
+        }
+    }, [])
+
     return (
         <Navbar>
-            {/* Desktop Navigation */}
             <NavBody>
-                <NavbarLogo />
+                <button onClick={scrollToTop} className="focus:outline-none">
+                    <NavbarLogo />
+                </button>
                 <NavItems items={navItems} />
                 <div className="flex items-center gap-4">
-                    <Link href="/Login">
+                    <Link href="/register">
                         <button
-                            className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                            className="relative inline-flex h-12 w-25 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                             <span
-                                className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"/>
+                                className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff6d3a_0%,#00cfff_50%,#ff6d3a_100%)]"></span>
                             <span
                                 className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                                Login⠀
-                                <img src="Discord.svg" width="30rem"/>
+                                    Register
                             </span>
                         </button>
                     </Link>
                 </div>
             </NavBody>
 
-            {/* Mobile Navigation */}
             <MobileNav>
                 <MobileNavHeader>
-                    <NavbarLogo/>
+                    <button onClick={scrollToTop} className="focus:outline-none">
+                        <NavbarLogo/>
+                    </button>
                     <MobileNavToggle isOpen={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}/>
                 </MobileNavHeader>
 
@@ -65,7 +108,12 @@ export function NavbarMain() {
                         <a
                             key={`mobile-link-${idx}`}
                             href={item.link}
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                const sectionId = item.link.substring(1)
+                                scrollToSection(sectionId)
+                                setIsMobileMenuOpen(false)
+                            }}
                             className="relative text-neutral-600 dark:text-neutral-300"
                         >
                             <span className="block">{item.name}</span>

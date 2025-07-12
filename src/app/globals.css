@@ -45,6 +45,42 @@
 }
 
 :root {
+  --ember-bg: #18171a;
+  --ember-bg-gradient: linear-gradient(135deg, #18171a 0%, #1a1a1a 100%);
+  --ember-orange: #ff6d3a;
+  --ember-blue: #00cfff;
+  --ember-orange-dark: #c94c1c;
+  --ember-blue-dark: #0a3d5c;
+  --ember-text: #f5f5f5;
+  --ember-gray: #18171a;
+}
+
+body {
+  background: var(--ember-bg-gradient);
+  color: var(--ember-text);
+}
+
+h1, h2, h3, h4, h5, h6, .accent {
+  color: var(--ember-orange);
+  letter-spacing: 0.01em;
+}
+
+.bg-gray-900, .bg-black, .bg-gray-800, .bg-zinc-900 {
+  background: var(--ember-gray) !important;
+}
+
+.card, .rounded-2xl, .rounded-xl {
+  border: 2.5px solid var(--ember-blue);
+  box-shadow: 0 0 12px 2px var(--ember-blue), 0 0 24px 4px var(--ember-orange);
+}
+
+.faq-question, .button, .btn, button, [type="button"], [type="submit"] {
+  color: #fff !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+:root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
