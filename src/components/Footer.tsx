@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Twitter, Instagram, Linkedin, Mail } from "lucide-react"
+import { Github, Instagram, Linkedin, Mail } from "lucide-react"
 import { useScrollAnimation } from "../hook/use-scroll-animation"
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
                             </span>
                         </h3>
                         <p className="text-gray-400 mb-6 max-w-md">
-                            UTMSAM's Flagship Hackathon
+                            UTMSAM&apos;s Flagship Hackathon
                         </p>
                         <div className="flex gap-4">
                             <a href="https://github.com/UTMSAM/Hackathon2025" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-300">

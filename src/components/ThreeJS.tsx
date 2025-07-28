@@ -41,8 +41,8 @@ export default function ThreeJS({ className = "", height = "h-96" }: ThreeJSProp
                     setCanvasError(true)
                   }
                 }}
-                onError={(error) => {
-                  console.error("Canvas error:", error)
+                onError={() => {
+                  console.error("Canvas error occurred")
                   setCanvasError(true)
                 }}
                 fallback={<FallbackScene />}

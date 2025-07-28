@@ -33,7 +33,7 @@ interface ErrorFallbackProps {
     resetErrorBoundary: () => void
 }
 
-export function ErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
+export function ErrorFallback({ resetErrorBoundary }: ErrorFallbackProps) {
     return (
         <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-900 to-gray-700">
             <div className="text-center space-y-4">

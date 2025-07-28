@@ -20,17 +20,17 @@ const FAQ = () => {
         {
             id: "faq-1",
             question: "Who can participate?",
-            answer: "Any student enrolled in a post-secondary institution can participate in our hackathon! Whether you're a beginner or an experienced developer, students of all skill levels are all welcome to join and create amazing projects."
+            answer: "Any student enrolled in a post-secondary institution can participate in our hackathon! Whether you&apos;re a beginner or an experienced developer, students of all skill levels are all welcome to join and create amazing projects."
         },
         {
             id: "faq-2",
             question: "What should I bring?",
-            answer: "Bring your laptop, charger, and enthusiasm! We'll provide food, drinks, and all the mentorship you need to succeed. Don't forget your student ID if you're a student, and any hardware you might want to work with."
+            answer: "Bring your laptop, charger, and enthusiasm! We&apos;ll provide food, drinks, and all the mentorship you need to succeed. Don&apos;t forget your student ID if you&apos;re a student, and any hardware you might want to work with."
         },
         {
             id: "faq-3",
             question: "How do teams work?",
-            answer: "You can form teams of up to 4 people. Don't have a team? No problem! We'll help you find teammates during the team formation session at the beginning of the event. We also have a Discord server for pre-event networking."
+            answer: "You can form teams of up to 4 people. Don&apos;t have a team? No problem! We&apos;ll help you find teammates during the team formation session at the beginning of the event. We also have a Discord server for pre-event networking."
         },
         {
             id: "faq-4",
@@ -50,7 +50,7 @@ const FAQ = () => {
         {
             id: "faq-7",
             question: "What technologies can I use?",
-            answer: "You can use any programming language, framework, or technology you're comfortable with. We encourage innovation and creativity! Popular choices include React, Python, Unity, and more. Hardware projects are also welcome."
+            answer: "You can use any programming language, framework, or technology you&apos;re comfortable with. We encourage innovation and creativity! Popular choices include React, Python, Unity, and more. Hardware projects are also welcome."
         },
         {
             id: "faq-8",

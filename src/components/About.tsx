@@ -31,11 +31,11 @@ const About = () => {
                         </span>
                             </h2>
                             <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-                                Join the University of Toronto Mississauga's Society of Algorithmic Modelling for their
+                                Join the University of Toronto Mississauga&apos;s Society of Algorithmic Modelling for their
                                 first-ever 36-hour hackathon experience.
                                 Ember Hacks brings together passionate developers, designers, and innovators to create
                                 solutions that matter.
-                                You'll work alongside peers and mentors to transform an ambitious concept into a
+                                You&apos;ll work alongside peers and mentors to transform an ambitious concept into a
                                 tangible project in a sprint of creativity and coding.
                                 Get ready to build, learn, and compete in an unforgettable weekend of innovation.
                             </p>

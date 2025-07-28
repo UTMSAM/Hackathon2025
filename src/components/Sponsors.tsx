@@ -1,6 +1,7 @@
 "use client"
 
 import { useScrollAnimation } from "../hook/use-scroll-animation"
+import Image from "next/image"
 
 const Sponsors = () => {
     const titleAnimation = useScrollAnimation({ threshold: 0.3 })
@@ -95,9 +96,11 @@ const Sponsors = () => {
                             >
                                 <div className="bg-slate-700 rounded-2xl p-8 hover:bg-gray-750 transition-all duration-300 hover:scale-105 hover:shadow-xl group">
                                     <div className="flex items-center justify-center mb-4 transition-shadow duration-300">
-                                        <img
+                                        <Image
                                             src={sponsor.logo || "/placeholder.svg"}
                                             alt={sponsor.alt}
+                                            width={192}
+                                            height={192}
                                             className="p-8 object-contain max-h-48 w-full"
                                             onError={(e) => {
                                                 console.error("Image failed to load:", sponsor.logo)

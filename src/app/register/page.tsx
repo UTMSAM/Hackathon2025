@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from 'react'
-import { User, Mail, Phone, GraduationCap, Users, Code, Lightbulb, Star } from 'lucide-react'
+import { User, GraduationCap, Code, Lightbulb, Star } from 'lucide-react'
 import Link from 'next/link'
-import Sponsors from "@/components/Sponsors";
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -62,7 +61,7 @@ const Register = () => {
                             </span>
                         </h1>
                         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                            Join us for 36 hours of innovation, creativity, and coding at UTM's first-ever hackathon.
+                            Join us for 36 hours of innovation, creativity, and coding at UTM&apos;s first-ever hackathon.
                             Registration is free and includes meals, swag, and access to workshops!
                         </p>
                     </div>
@@ -256,7 +255,7 @@ const Register = () => {
                                             value={formData.projectIdeas}
                                             onChange={handleInputChange}
                                             rows={3}
-                                            placeholder="Any project ideas or themes you're excited about? (Optional)"
+                                            placeholder="Any project ideas or themes you&apos;re excited about? (Optional)"
                                             className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300"
                                         />
                                     </div>

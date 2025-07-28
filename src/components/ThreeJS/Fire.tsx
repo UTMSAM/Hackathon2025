@@ -9,7 +9,7 @@ export function Fire() {
     const smokeRef = useRef<THREE.Points>(null)
     const { mouse, camera, raycaster, scene, gl } = useThree()
     const [isOverIsland, setIsOverIsland] = useState(false)
-    const [firePosition, setFirePosition] = useState<THREE.Vector3 | null>(null)
+    const [, setFirePosition] = useState<THREE.Vector3 | null>(null)
     const [mouseInitialized, setMouseInitialized] = useState(false)
     const [isMouseInCanvas, setIsMouseInCanvas] = useState(false)
     const fireParticleCount = 250
